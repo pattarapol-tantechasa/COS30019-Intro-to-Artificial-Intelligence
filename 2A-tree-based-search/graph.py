@@ -1,5 +1,3 @@
-# graph.py
-
 class Graph:
     def __init__(self):
         self.nodes = {}       # { node_id: (x, y) }

@@ -1,4 +1,3 @@
-# search.py
 import sys
 from graph import parse_file
 from algorithms import bfs, dfs

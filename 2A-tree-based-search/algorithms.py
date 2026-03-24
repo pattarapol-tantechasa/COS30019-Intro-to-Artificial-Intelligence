@@ -1,6 +1,4 @@
-# algorithms.py
 from collections import deque
-
 
 def bfs(graph):
     """

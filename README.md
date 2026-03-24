@@ -6,7 +6,7 @@ Format : `python search.py tests/<test_file> <method>`
 
 ```bash
 # Change Directory
-cd tree-based-search
+cd 2A-tree-based-search
 
 # Search with BFS
 python search.py tests/PathFinder-test.txt BFS
