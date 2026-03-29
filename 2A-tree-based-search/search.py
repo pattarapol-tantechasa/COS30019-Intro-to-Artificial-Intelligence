@@ -1,6 +1,6 @@
 import sys
 from graph import parse_file
-from algorithms import bfs, dfs
+from algorithms import bfs, dfs, cus2
 
 
 def format_output(filename, method, goal, nodes_created, path):
@@ -24,6 +24,8 @@ def main():
         goal, nodes_created, path = bfs(graph)
     elif method == 'DFS':
         goal, nodes_created, path = dfs(graph)
+    elif method == 'CUS2':
+        goal, nodes_created, path = cus2(graph)
     else:
         print(f"Unknown method: {method}")
         sys.exit(1)
