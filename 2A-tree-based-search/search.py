@@ -2,6 +2,9 @@ import sys
 from graph import parse_file
 from algorithms import bfs, dfs
 
+from astar import astar
+from iddfs import iddfs
+
 
 def format_output(filename, method, goal, nodes_created, path):
     path_str = ' -> '.join(str(n) for n in path)
@@ -24,6 +27,10 @@ def main():
         goal, nodes_created, path = bfs(graph)
     elif method == 'DFS':
         goal, nodes_created, path = dfs(graph)
+    elif method == 'ASTAR':
+        goal, nodes_created, path = astar(graph)
+    elif method == 'IDDFS':
+        goal, nodes_created, path = iddfs(graph)
     else:
         print(f"Unknown method: {method}")
         sys.exit(1)
