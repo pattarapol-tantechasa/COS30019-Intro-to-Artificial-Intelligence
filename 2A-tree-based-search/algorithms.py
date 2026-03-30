@@ -1,4 +1,6 @@
 from collections import deque
+import heapq
+import math
 
 def bfs(graph):
     """
@@ -72,5 +74,42 @@ def dfs(graph):
             if neighbour not in explored:
                 nodes_created += 1
                 frontier.append((neighbour, path + [neighbour]))
+
+    return None, nodes_created, []
+
+def gbfs(graph):
+
+
+    start = graph.origin
+    goals = set(graph.destinations)
+
+    def heuristic(node):
+        x1, y1 = graph.nodes[node]
+        return min(
+            math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+            for dest in goals
+            for x2, y2 in [graph.nodes[dest]]
+        )
+
+    counter = 0
+    frontier = [(heuristic(start), counter, start, [start])]
+    explored = set()
+    nodes_created = 1
+
+    while frontier:
+        h, _, node, path = heapq.heappop(frontier)
+
+        if node in explored:
+            continue
+        explored.add(node)
+
+        if node in goals:
+            return node, nodes_created, path
+
+        for neighbour, cost in graph.get_neighbours(node):
+            if neighbour not in explored:
+                counter += 1
+                nodes_created += 1
+                heapq.heappush(frontier, (heuristic(neighbour), counter, neighbour, path + [neighbour]))
 
     return None, nodes_created, []
