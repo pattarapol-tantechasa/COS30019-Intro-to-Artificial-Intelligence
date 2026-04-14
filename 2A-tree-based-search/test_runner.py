@@ -5,15 +5,15 @@ from pathlib import Path
 from graph import parse_file
 from algorithms import bfs, dfs
 from astar import astar
-from iddfs import iddfs
+from cus2 import iddfs
 from gbfs import gbfs
 
 ALGORITHMS = {
     'BFS':   bfs,
     'DFS':   dfs,
     'GBFS':  gbfs,
-    'ASTAR': astar,
-    'IDDFS': iddfs,
+    'AS': astar,
+    'CUS2': iddfs,
 }
 
 
