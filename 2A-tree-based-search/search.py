@@ -3,7 +3,7 @@ from graph import parse_file
 from algorithms import bfs, dfs
 
 from astar import astar
-from iddfs import iddfs
+from cus2 import iddfs
 from gbfs import gbfs
 
 
@@ -28,9 +28,9 @@ def main():
         goal, nodes_created, path = bfs(graph)
     elif method == 'DFS':
         goal, nodes_created, path = dfs(graph)
-    elif method == 'ASTAR':
+    elif method == 'AS':
         goal, nodes_created, path = astar(graph)
-    elif method == 'IDDFS':
+    elif method == 'CUS2':
         goal, nodes_created, path = iddfs(graph)
     elif method == 'GBFS':
         goal, nodes_created, path = gbfs(graph)
