@@ -4,12 +4,13 @@ from algorithms import bfs, dfs
 
 from astar import astar
 from iddfs import iddfs
+from gbfs import gbfs
 
 
 def format_output(filename, method, goal, nodes_created, path):
     path_str = ' -> '.join(str(n) for n in path)
     print(f"{filename} {method}")
-    print(f"{goal} {nodes_created}")
+    print(f"Goal: {goal}\nNode Visited: {nodes_created}\n")
     print(path_str)
 
 
@@ -31,6 +32,8 @@ def main():
         goal, nodes_created, path = astar(graph)
     elif method == 'IDDFS':
         goal, nodes_created, path = iddfs(graph)
+    elif method == 'GBFS':
+        goal, nodes_created, path = gbfs(graph)
     else:
         print(f"Unknown method: {method}")
         sys.exit(1)
