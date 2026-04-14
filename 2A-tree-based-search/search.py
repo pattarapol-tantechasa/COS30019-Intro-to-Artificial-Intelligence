@@ -8,10 +8,11 @@ from gbfs import gbfs
 
 
 def format_output(filename, method, goal, nodes_created, path):
-    path_str = ' -> '.join(str(n) for n in path)
+    path_str = ', '.join(str(n) for n in path)
     print(f"{filename} {method}")
-    print(f"Goal: {goal}\nNode Visited: {nodes_created}\n")
-    print(path_str)
+    print(f"{goal} {nodes_created}")
+    print(f"[{path_str}]")
+
 
 
 def main():

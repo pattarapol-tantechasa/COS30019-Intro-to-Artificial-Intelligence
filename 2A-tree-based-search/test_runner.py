@@ -75,9 +75,9 @@ def run_all_tests(method):
         if goal is None:
             print("No solution found.")
         else:
-            path_str = ' -> '.join(str(n) for n in path)
-            print(f"Goal: {goal}\nNode Visited: {nodes_created}\n")
-            print(path_str)
+            path_str = ', '.join(str(n) for n in path)
+            print(f"{goal} {nodes_created}")
+            print(f"[{path_str}]")
         print()
 
 
@@ -137,9 +137,9 @@ def main():
             if goal is None:
                 print("No solution found.")
             else:
-                path_str = ' -> '.join(str(n) for n in path)
-                print(f"Goal: {goal}\nNode Visited: {nodes_created}\n")
-                print(path_str)
+                path_str = ', '.join(str(n) for n in path)
+                print(f"{goal} {nodes_created}")
+                print(f"[{path_str}]")
             print()
 
 
