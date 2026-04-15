@@ -1,6 +1,6 @@
 import sys
 from graph import parse_file
-from algorithms import bfs, dfs
+from algorithms import bfs, dfs, cus2
 
 from astar import astar
 from cus1 import iddfs
@@ -34,6 +34,8 @@ def main():
         goal, nodes_created, path = iddfs(graph)
     elif method == 'GBFS':
         goal, nodes_created, path = gbfs(graph)
+    elif method == 'CUS2':
+        goal, nodes_created, path = cus2(graph)
     else:
         print(f"Unknown method: {method}")
         sys.exit(1)
