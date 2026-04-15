@@ -5,7 +5,7 @@ from pathlib import Path
 from graph import parse_file
 from algorithms import bfs, dfs
 from astar import astar
-from cus2 import iddfs
+from cus1 import iddfs
 from gbfs import gbfs
 
 ALGORITHMS = {
@@ -13,7 +13,7 @@ ALGORITHMS = {
     'DFS':   dfs,
     'GBFS':  gbfs,
     'AS': astar,
-    'CUS2': iddfs,
+    'CUS1': iddfs,
 }
 
 

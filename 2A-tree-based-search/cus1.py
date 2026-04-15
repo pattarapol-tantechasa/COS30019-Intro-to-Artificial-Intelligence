@@ -1,5 +1,5 @@
 
-# Custom uninformed Algorithm (CUS2): IDDFS (tree based with infinite state check)
+# Custom uninformed Algorithm (CUS1): IDDFS (tree based with infinite state check)
 def iddfs(graph):
     start = graph.origin
     goals = set(graph.destinations)
