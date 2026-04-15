@@ -1,10 +1,11 @@
 import sys
 from graph import parse_file
-from algorithms import bfs, dfs, cus2
+from algorithms import bfs, dfs
 
 from astar import astar
 from cus1 import iddfs
 from gbfs import gbfs
+from cus2 import cus2
 
 
 def format_output(filename, method, goal, nodes_created, path):
