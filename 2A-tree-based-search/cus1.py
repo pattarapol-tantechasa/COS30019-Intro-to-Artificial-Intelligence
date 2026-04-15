@@ -6,7 +6,7 @@ def iddfs(graph):
 
     nodes_created_total = 0
 
-    # dfs helper function. search until a limit is reached
+    # dls (depth-limited search) helper function. search until a limit is reached
     def dls(node, path, depth):
         nonlocal nodes_created_total
         nodes_created_total += 1
@@ -44,7 +44,7 @@ def iddfs(graph):
 
     # IDDFS (Iterative Deepening) Loop
     # search space is expanded gradually and finitely.
-    # Run DFS multiple times and increase depth limit each time
+    # Run DLS multiple times and increase depth limit each time
     for depth in range(max_depth + 1):
         result = dls(start, [start], depth)
 
