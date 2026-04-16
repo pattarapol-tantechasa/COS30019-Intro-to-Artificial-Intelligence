@@ -1,6 +1,7 @@
 import sys
 from graph import parse_file
-from algorithms import bfs, dfs
+from bfs import bfs
+from dfs import dfs
 
 from astar import astar
 from cus1 import iddfs
