@@ -9,7 +9,7 @@ from cus2 import cus2
 
 
 def format_output(filename, method, goal, nodes_created, path):
-    path_str = ' -> '.join(str(n) for n in path)
+    path_str = ' -> '.join(str(n) for n in path) # fix output. join with comma, add brackets to path_str
     print(f"{filename} {method}")
     print(f"Goal: {goal}\nNode Visited: {nodes_created}\n")
     print(path_str)

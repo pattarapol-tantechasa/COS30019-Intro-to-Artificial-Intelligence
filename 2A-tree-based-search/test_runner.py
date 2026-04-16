@@ -6,6 +6,7 @@ from graph import parse_file
 from algorithms import bfs, dfs
 from astar import astar
 from cus1 import iddfs
+from cus2 import cus2
 from gbfs import gbfs
 
 ALGORITHMS = {
@@ -14,6 +15,7 @@ ALGORITHMS = {
     'GBFS':  gbfs,
     'AS': astar,
     'CUS1': iddfs,
+    'CUS2': cus2
 }
 
 
