@@ -32,10 +32,10 @@ def main():
         goal, nodes_created, path = dfs(graph)
     elif method == 'AS':
         goal, nodes_created, path = astar(graph)
-    elif method == 'CUS1':
-        goal, nodes_created, path = iddfs(graph)
     elif method == 'GBFS':
         goal, nodes_created, path = gbfs(graph)
+    elif method == 'CUS1':
+        goal, nodes_created, path = iddfs(graph)
     elif method == 'CUS2':
         goal, nodes_created, path = cus2(graph)
     else:
