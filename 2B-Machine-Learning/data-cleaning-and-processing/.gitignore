@@ -1,0 +1,8 @@
+# Don't commit raw datasets or processed outputs — they're regenerated locally
+data/*
+!data/.gitkeep
+output/*
+!output/.gitkeep
+
+__pycache__/
+*.pyc
