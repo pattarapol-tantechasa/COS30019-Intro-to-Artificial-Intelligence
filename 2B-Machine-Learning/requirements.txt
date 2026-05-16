@@ -1,0 +1,12 @@
+# Data processing
+pandas
+numpy
+xlrd
+openpyxl
+
+# Machine learning
+tensorflow
+scikit-learn
+
+# Visualisation
+matplotlib

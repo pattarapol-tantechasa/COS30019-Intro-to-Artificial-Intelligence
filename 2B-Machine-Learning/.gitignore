@@ -1,0 +1,10 @@
+# Don't commit raw datasets or processed outputs — they're regenerated locally
+data/*
+!data/.gitkeep
+output/*
+!output/.gitkeep
+!output/sites.csv
+!output/scats_long.csv
+
+__pycache__/
+*.pyc
