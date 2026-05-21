@@ -47,3 +47,44 @@ Files written to `./output/`:
 - `data.py` — load, clean, reshape from wide to long.
 - `dataset.py` — normalise, build sliding windows, split per site.
 - `run.py` — entry point. Runs the whole pipeline.
+
+
+## Running the ML Models
+Run each model script after `run.py` has been executed:
+
+```
+python lstm.py    # LSTM model
+python gru.py     # GRU model
+python saes.py    # Stacked Autoencoders (SAEs)
+```
+
+
+Each script reads from `./output/` and writes results to its own subdirectory:
+
+| Directory | Contents |
+| --- | --- |
+| `output/lstm/` | `lstm_model.keras`, `lstm_metrics.json`, loss + prediction plots |
+| `output/gru/` | `gru_model.keras`, `gru_metrics.json`, loss + prediction plots |
+| `output/saes/` | `saes_model.keras`, `saes_metrics.json`, loss + prediction plots |
+
+## Comparing Models
+Once all three models have been trained, run:
+```
+python compare.py
+```
+
+Output is written to `output/comparison/`:
+
+| File | What it is |
+| --- | --- |
+| `comparison_metrics.csv` | MAE, RMSE, R² for all three models in one table |
+| `comparison_bar.png` | Separate bar chart per metric |
+| `comparison_grouped.png` | All metrics grouped side by side |
+
+## Dependencies
+Full list — install with:
+```
+pip install -r requirements.txt
+```
+Requires Python 3.11. 
+Models were developed and tested with TensorFlow 2.21 / Keras 3.13.
