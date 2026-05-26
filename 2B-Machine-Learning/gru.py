@@ -6,9 +6,7 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
-
 import config
-
 
 EPOCHS = 50
 BATCH_SIZE = 64

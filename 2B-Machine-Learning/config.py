@@ -26,3 +26,7 @@ TRAIN_SPLIT = 0.8
 # selected days. The notes say data was already removed for those days, so
 # we don't drop the entire site — just kept here for reference.
 KNOWN_BAD_SITES = [970, 2000, 2820, 3001]
+
+# Number of nearest SCATS neighbours to connect in the routing graph.
+# Increase for a denser graph, decrease for faster search.
+K_NEIGHBOURS = 5

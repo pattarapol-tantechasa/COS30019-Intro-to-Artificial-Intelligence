@@ -9,6 +9,14 @@ from tensorflow.keras import layers
 from tensorflow.keras.layers import Dense, Dropout, Activation
 from tensorflow.keras.models import Sequential
 
+# Parent folder path
+# if we put models in a subfolder, we need a path reference to the parent folder
+# to import config
+
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 import config
 
 # SAEs-specific hyperparameters
