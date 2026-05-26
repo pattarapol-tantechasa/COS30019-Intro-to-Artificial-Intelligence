@@ -25,6 +25,7 @@ import numpy as np
 import pandas as pd
 import tensorflow as tf
 
+
 import config
 
 # ---------------------------------------------------------------------------
@@ -201,8 +202,8 @@ def estimate_travel_time(
     if row_a.empty or row_b.empty:
         return PENALTY
 
-    lat_a, lon_a = float(row_a["NB_LATITUDE"]), float(row_a["NB_LONGITUDE"])
-    lat_b, lon_b = float(row_b["NB_LATITUDE"]), float(row_b["NB_LONGITUDE"])
+    lat_a, lon_a = float(row_a["NB_LATITUDE"].iloc[0]), float(row_a["NB_LONGITUDE"].iloc[0])
+    lat_b, lon_b = float(row_b["NB_LATITUDE"].iloc[0]), float(row_b["NB_LONGITUDE"].iloc[0])
     distance_km = haversine_km(lat_a, lon_a, lat_b, lon_b)
 
     # --- Predict volume at site A (flow is from the starting site) ---
