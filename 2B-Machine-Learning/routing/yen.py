@@ -198,7 +198,7 @@ if __name__ == "__main__":
     from travel_time import load_model, load_scalers, load_sites
     from graph_builder import build_graph
 
-    MODEL_NAME = "saes"
+    MODEL_NAME = "saes" # edit to change model
 
     print(f"Loading model ({MODEL_NAME}) ...")
     model   = load_model(MODEL_NAME)
