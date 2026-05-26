@@ -9,6 +9,11 @@ from tensorflow.keras import layers
 from tensorflow.keras.layers import Dense, Dropout, Activation
 from tensorflow.keras.models import Sequential
 
+# Folder
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 import config
 
 # SAEs-specific hyperparameters
