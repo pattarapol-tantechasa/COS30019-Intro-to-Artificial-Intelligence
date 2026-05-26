@@ -81,6 +81,40 @@ Output is written to `output/comparison/`:
 | `comparison_bar.png` | Separate bar chart per metric |
 | `comparison_grouped.png` | All metrics grouped side by side |
 
+## Routing
+
+The routing pipeline connects the ML traffic predictions to the A* search
+algorithm to find optimal paths between SCATS intersections.
+
+### Files
+- `travel_time.py` — converts ML predicted volume to travel time (seconds)
+- `routing/graph.py` — Graph class used by A* (uses unchanged graph.py from part 2A)
+- `routing/graph_builder.py` — builds the graph from SCATS sites and travel time predictions
+- `routing/astar.py` — A* search algorithm (uses unchanged A* algorithm from part 2A)
+- `routing/yen.py` — Yen's k-shortest paths algorithm, wraps A* to find up to 5 routes
+
+### Running the routing pipeline
+Requires at least one trained model (`lstm`, `gru`, or `saes`) before running.
+
+You can test the full routing pipeline with the sample origin/destination from the assignment 2B brief:
+```
+python routing/yen.py
+```
+
+This will:
+1. Load the trained SAEs model (change `MODEL_NAME` in `yen.py` to use `lstm` or `gru`)
+2. Build a graph of SCATS intersections with travel time edge costs
+3. Find the top 5 routes between site 2000 and site 3002
+4. Print each route with estimated travel time
+
+### Notes
+- All scripts must be run from the project root directory
+- `K_NEIGHBOURS = 5` in `config.py` controls how many nearest neighbours each site connects to
+- A small number of edges may be skipped if a site has insufficient traffic data
+- Travel time formula derived from the provided PDF on Canvas: `flow = -1.4648375 * speed² + 93.75 * speed`
+- Speed is capped at 60 km/h when flow is below 351 vehicles/hour
+- Each intersection adds a 30 second delay to the travel time
+
 ## Dependencies
 Full list — install with:
 ```
