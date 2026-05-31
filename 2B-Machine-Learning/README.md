@@ -8,7 +8,7 @@ turns it into windowed numpy arrays ready for LSTM/GRU/etc.
 1. Drop `Scats Data October 2006.xls` into `./data/`.
 2. Install the deps:
    ```
-   pip install pandas numpy xlrd
+   pip install -r requirements.txt
    ```
 3. Run it:
    ```
@@ -114,6 +114,34 @@ This will:
 - Travel time formula derived from the provided PDF on Canvas: `flow = -1.4648375 * speed² + 93.75 * speed`
 - Speed is capped at 60 km/h when flow is below 351 vehicles/hour
 - Each intersection adds a 30 second delay to the travel time
+
+## GUI
+
+A Tkinter-based graphical interface is available with three tabs:
+- **Route Finder** — enter origin/destination SCATS site numbers, select a model, and find up to 5 routes with estimated travel times and an interactive graph
+- **Model Visualisation** — browse loss curve and prediction plots per model
+- **Model Comparison** — side-by-side MAE/RMSE/R² bar charts across all three models
+
+### Running the GUI
+Requires at least one trained model before launching.
+Run the GUI with
+```
+python gui.py
+```
+
+### Usage
+1. Select the **Route Finder** tab
+2. Enter an origin and destination SCATS site number (e.g. Origin: `2000`, Destination: `3002`)
+3. Select a model (`lstm`, `gru`, or `saes`)
+4. Click **Find Routes** — the graph builds in approximately 30 seconds
+5. Up to 5 routes appear in the list with travel time and link count
+6. Click any route to highlight it on the map and see the full node sequence
+
+### Notes
+- All scripts must be run from the project root directory
+- The GUI loads whichever models have a `.keras` file in `output/` — run the model scripts first
+- Model plots in the Visualisation tab require the corresponding model script to have been run
+
 
 ## Dependencies
 Full list — install with:
