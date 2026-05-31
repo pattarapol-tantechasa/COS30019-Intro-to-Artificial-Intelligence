@@ -107,6 +107,34 @@ This will:
 3. Find the top 5 routes between site 2000 and site 3002
 4. Print each route with estimated travel time
 
+## GUI
+
+A Tkinter-based graphical interface is available with three tabs:
+- **Route Finder** — enter origin/destination SCATS site numbers, select a model, and find up to 5 routes with estimated travel times and an interactive graph
+- **Model Visualisation** — browse loss curve and prediction plots per model
+- **Model Comparison** — side-by-side MAE/RMSE/R² bar charts across all three models
+
+### Running the GUI
+Requires at least one trained model before launching.
+Full GUI implementation can be ran using
+```
+python gui.py
+```
+
+### Usage
+1. Select the **Route Finder** tab
+2. Enter an origin and destination SCATS site number (e.g. Origin: `2000`, Destination: `3002`)
+3. Select a model (`lstm`, `gru`, or `saes`)
+4. Click **Find Routes** — the graph builds in approximately 30 seconds
+5. Up to 5 routes appear in the list with travel time and link count
+6. Click any route to highlight it on the map and see the full node sequence
+
+### Notes
+- All scripts must be run from the project root directory
+- The GUI loads whichever models have a `.keras` file in `output/` — run the model scripts first
+- Model plots in the Visualisation tab require the corresponding model script to have been run
+
+
 ### Notes
 - All scripts must be run from the project root directory
 - `K_NEIGHBOURS = 5` in `config.py` controls how many nearest neighbours each site connects to

@@ -3,7 +3,7 @@ yen.py
 ------
 Implements Yen's k-shortest paths algorithm using the existing A* search from 2A.
 
-The assignment brief requires returning up to 5 routes from origin to destination
+The assignment requires returning up to 5 routes from origin to destination
 with estimated travel time. A* only returns the single best path, so Yen's
 algorithm wraps it to find alternatives by systematically blocking edges
 from previously found paths and re-running the search.
@@ -186,7 +186,7 @@ def format_paths(paths: list, sites_df=None) -> str:
 
 
 # ---------------------------------------------------------------------------
-# Quick sanity check
+# Quick sanity check - testing purposes
 # ---------------------------------------------------------------------------
 
 if __name__ == "__main__":

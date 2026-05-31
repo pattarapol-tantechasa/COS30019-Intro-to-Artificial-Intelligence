@@ -25,7 +25,7 @@ def main():
     df = clean(df, vol_cols)
 
     # Per-approach location lookup — needed later for graph construction
-    # (Task 3/4). Each SCATS intersection has up to 4 directional approaches,
+    # Each SCATS intersection has up to 4 directional approaches,
     # so we keep them all here.
     sites = (df[['SCATS Number', 'Location', 'NB_LATITUDE', 'NB_LONGITUDE']]
              .drop_duplicates(subset=['SCATS Number', 'Location'])

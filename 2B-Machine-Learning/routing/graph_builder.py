@@ -6,7 +6,7 @@ Builds a Graph object from the SCATS dataset for use with A* search.
 Each SCATS intersection becomes a node. Edges are created between each site
 and its k nearest neighbours (default k=5, configurable in config.py).
 Edge costs are travel time in seconds, estimated using the ML model and the
-flow->speed conversion from the Canvas resource pdf
+flow->speed conversion from PDF provided on Canvas
 
 Usage:
     from graph_builder import build_graph
