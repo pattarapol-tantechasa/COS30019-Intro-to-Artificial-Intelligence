@@ -8,7 +8,7 @@ turns it into windowed numpy arrays ready for LSTM/GRU/etc.
 1. Drop `Scats Data October 2006.xls` into `./data/`.
 2. Install the deps:
    ```
-   pip install pandas numpy xlrd
+   pip install -r requirements.txt
    ```
 3. Run it:
    ```
@@ -107,6 +107,14 @@ This will:
 3. Find the top 5 routes between site 2000 and site 3002
 4. Print each route with estimated travel time
 
+### Notes
+- All scripts must be run from the project root directory
+- `K_NEIGHBOURS = 5` in `config.py` controls how many nearest neighbours each site connects to
+- A small number of edges may be skipped if a site has insufficient traffic data
+- Travel time formula derived from the provided PDF on Canvas: `flow = -1.4648375 * speed² + 93.75 * speed`
+- Speed is capped at 60 km/h when flow is below 351 vehicles/hour
+- Each intersection adds a 30 second delay to the travel time
+
 ## GUI
 
 A Tkinter-based graphical interface is available with three tabs:
@@ -116,7 +124,7 @@ A Tkinter-based graphical interface is available with three tabs:
 
 ### Running the GUI
 Requires at least one trained model before launching.
-Full GUI implementation can be ran using
+Run the GUI with
 ```
 python gui.py
 ```
@@ -134,14 +142,6 @@ python gui.py
 - The GUI loads whichever models have a `.keras` file in `output/` — run the model scripts first
 - Model plots in the Visualisation tab require the corresponding model script to have been run
 
-
-### Notes
-- All scripts must be run from the project root directory
-- `K_NEIGHBOURS = 5` in `config.py` controls how many nearest neighbours each site connects to
-- A small number of edges may be skipped if a site has insufficient traffic data
-- Travel time formula derived from the provided PDF on Canvas: `flow = -1.4648375 * speed² + 93.75 * speed`
-- Speed is capped at 60 km/h when flow is below 351 vehicles/hour
-- Each intersection adds a 30 second delay to the travel time
 
 ## Dependencies
 Full list — install with:
